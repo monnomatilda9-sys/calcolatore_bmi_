@@ -1,0 +1,78 @@
+body{
+            background-color: #f1f1f1;
+            color: #1f2328;
+            font-family: sans-serif;
+        }
+
+        main{
+            padding-bottom: 0%;
+            padding-left: 60px;
+            padding-right: 60px;  
+        }
+
+        .card{
+            background-color: white;
+            width: 360px;
+            padding: 24px;
+            border-radius: 12px; /*bordi arrotondati*/
+            box-shadow: 0 4px rgba(0, 0, 0, 0.08);
+            box-sizing: border-box;
+        }
+
+        .h1{
+            padding-top: 113px;
+            padding-left: 135px;
+            padding-right: 135px;
+            padding-bottom: 490px;
+            font-weight: bold; /*grassetto il titolo*/
+        }
+
+        .form-group{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: bottom 6px; ;
+        }
+
+        label{
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 66px;
+        }
+
+        input{
+            width: 100px;
+            padding: 10px 12px;
+            border: 1px solid #D0D7DE;
+            border-radius: 6px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #1F2328;   /* Scurisce il bordo quando si seleziona il campo */
+        }
+
+        /*il pulsante calcola*/
+        button[type="submit"]{
+            background-color: #1F2328;
+            color: #FFFFFF;
+            border-radius: 8px;
+            width: 100%;
+            font-size: 16px;
+            padding-bottom: 24px;
+            padding-top: 285px;
+            padding-left: 24px;
+            padding-right: 24px;
+            font-weight: bold;
+            border: none;            /* Rimuove il bordo predefinito */
+            cursor: pointer;         /* Mostra la manina al passaggio del mouse */
+            transition: background-color 0.2s;
+        }
+
+        button[type="submit"]:hover {
+             background-color: #33383F; /* Diventa leggermente più chiaro al passaggio */
+        }
+
+    
