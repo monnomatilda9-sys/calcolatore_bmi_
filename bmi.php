@@ -35,7 +35,7 @@ if ($bmi < 18.5) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Risultato BMI</title>
     <!-- Collegamento allo stesso file CSS comune -->
-    <link rel="stylesheet" href="stile.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -61,7 +61,7 @@ if ($bmi < 18.5) {
         </div>
 
         <!-- Link "Calcola di nuovo" diretto verso form.html -->
-        <a href="form.html" class="link-riprova">Calcola di nuovo</a>
+        <a href="index.html" class="link-riprova">Calcola di nuovo</a>
     </main>
 
 </body>
