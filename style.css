@@ -77,4 +77,76 @@ body{
              background-color: #33383F; /* Diventa leggermente più chiaro al passaggio */
         }
 
+        .card.sottopeso,
+        .card.normopeso,
+        .card.sovrappeso,
+        .card.obesita {
+            border-width: 3px;
+            border-style: solid;
+        }
+
+            /* 1. Sottopeso (< 18.5) */
+            .card.sottopeso {
+                background-color: #E3EEF9;
+                border-color: #2F6FB3;
+                color: #2F6FB3;
+            }
+
+            /* 2. Normopeso (18.5 - 24.9) */
+            .card.normopeso {
+                background-color: #E3F4E6;
+                border-color: #256D34;
+                color: #256D34;
+            }
+
+            /* 3. Sovrappeso (25 - 29.9) */
+            .card.sovrappeso {
+                background-color: #FCEBD7;
+                border-color: #9A4F06;
+                color: #9A4F06;
+            }
+
+            /* 4. Obesità (>= 30) */
+            .card.obesita {
+                background-color: #FBE2E2;
+                border-color: #B32D2D;
+                color: #B32D2D;
+            }
+
+            /* Stili per il testo all'interno della card del risultato */
+            .card-nome {
+                font-size: 20px;
+                font-weight: bold;
+                color: #1F2328;
+                margin-bottom: 4px;
+            }
+
+            .card-dati {
+                font-size: 14px;
+                color: #1F2328;
+                margin-bottom: 16px;
+            }
+
+            .card-bmi {
+                font-size: 48px; /* Dimensione grande 48px come richiesta */
+                font-weight: bold;
+                color: #1F2328;
+                margin-bottom: 8px;
+            }
+
+            .card-fascia {
+                font-size: 16px;
+                font-weight: bold;
+                text-transform: uppercase; /* Scritta della fascia in maiuscolo */
+            }
+
+            /* Stile per il link sotto la card */
+            .link-riprova {
+                display: inline-block;
+                margin-top: 20px;
+                color: #1F2328;
+                text-decoration: underline;
+                font-size: 15px;
+}
+
     
