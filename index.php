@@ -187,7 +187,7 @@ if ($is_post) {
         
         <p>Categoria: <strong><?php echo $categoria; ?></strong></p>
 
-        <a href="bmi.php" class="btn-back">Torna al Form</a>
+        <a href="index.php" class="btn-back">Torna al Form</a>
       </div>
 
     <?php else: ?>
