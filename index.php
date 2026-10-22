@@ -10,14 +10,14 @@ $nome = "";
 if ($is_post) {
     $nome = isset($_POST['nome']) ? trim($_POST['nome']) : '';
     $peso = isset($_POST['peso']) ? floatval($_POST['peso']) : 0;
-    $altezza_cm = isset($_POST['altezza']) ? floatval($_POST['altezza']) : 0;
+    // Riceviamo direttamente l'altezza in metri
+    $altezza_m = isset($_POST['altezza']) ? floatval($_POST['altezza']) : 0;
 
     // Validazione lato server
-    if (empty($nome) || $peso <= 0 || $altezza_cm <= 0) {
+    if (empty($nome) || $peso <= 0 || $altezza_m <= 0) {
         $errore = "Inserisci tutti i dati correttamente prima di procedere.";
     } else {
-        // Conversione dell'altezza in metri
-        $altezza_m = $altezza_cm / 100;
+        // L'altezza è già in metri, non serve più dividerla per 100
         $altezza_quadrato = pow($altezza_m, 2);
 
         if ($altezza_quadrato > 0) {
@@ -53,7 +53,6 @@ if ($is_post) {
       padding: 0;
     }
 
-    /* Layout principale: centratura orizzontale e verticale */
     body {
       font-family: sans-serif;
       background-color: #F1F3F5;
@@ -66,7 +65,6 @@ if ($is_post) {
       padding: 20px;
     }
 
-    /* Contenitore principale */
     .container {
       width: 100%;
       min-width: 250px;
@@ -76,14 +74,12 @@ if ($is_post) {
       align-items: center;
     }
 
-    /* Titolo della pagina */
     h1 {
       font-size: 1.8rem;
       margin-bottom: 20px;
       text-align: center;
     }
 
-    /* Componente Card */
     .card {
       background-color: #FFFFFF;
       width: 100%;
@@ -92,7 +88,6 @@ if ($is_post) {
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
 
-    /* Gruppo formato da label, input e messaggio di errore */
     .form-group {
       display: flex;
       flex-direction: column;
@@ -103,7 +98,6 @@ if ($is_post) {
       margin-bottom: 24px;
     }
 
-    /* Label a tutta larghezza con distanza di 6px dal campo */
     label {
       width: 100%;
       font-weight: 600;
@@ -111,7 +105,6 @@ if ($is_post) {
       margin-bottom: 6px;
     }
 
-    /* Input a tutta larghezza */
     input[type="text"],
     input[type="number"] {
       width: 100%;
@@ -130,7 +123,6 @@ if ($is_post) {
       border-color: #1F2328;
     }
 
-    /* Pulsante Calcola a tutta larghezza */
     .btn-submit {
       width: 100%;
       background-color: #1F2328;
@@ -148,7 +140,6 @@ if ($is_post) {
       background-color: #32383E;
     }
 
-    /* Stili utili alla pagina dei risultati */
     .result-box {
       text-align: center;
       line-height: 1.6;
@@ -187,7 +178,8 @@ if ($is_post) {
         
         <p>Categoria: <strong><?php echo $categoria; ?></strong></p>
 
-        <a href="index.php" class="btn-back">Torna al Form</a>
+        <!-- L'href vuoto riporta automaticamente alla pagina stessa -->
+        <a href="" class="btn-back">Torna al Form</a>
       </div>
 
     <?php else: ?>
@@ -197,8 +189,8 @@ if ($is_post) {
           <p style="color: #D9383A; font-weight: bold; margin-bottom: 15px; text-align: center;"><?php echo $errore; ?></p>
         <?php endif; ?>
 
-        <!-- L'action punta a se stesso -->
-        <form action="index.php" method="POST">
+        <!-- L'action vuoto rimanda i dati alla pagina stessa, ignorando se si chiama index.php o bmi.php -->
+        <form action="" method="POST">
           
           <div class="form-group">
             <label for="nome">Nome</label>
@@ -211,8 +203,10 @@ if ($is_post) {
           </div>
 
           <div class="form-group last-group">
-            <label for="altezza">Altezza (cm)</label>
-            <input type="number" id="altezza" name="altezza" step="0.1" min="1" placeholder="Es. 175" required>
+            <!-- Etichetta aggiornata in metri -->
+            <label for="altezza">Altezza (m)</label>
+            <!-- Aggiunto step="0.01" per permettere due decimali e modificato il placeholder -->
+            <input type="number" id="altezza" name="altezza" step="0.01" min="0.5" placeholder="Es. 1.75" required>
           </div>
 
           <button type="submit" class="btn-submit">Calcola</button>
