@@ -198,7 +198,7 @@ if ($is_post) {
         <?php endif; ?>
 
         <!-- L'action punta a se stesso -->
-        <form action="bmi.php" method="POST">
+        <form action="index.php" method="POST">
           
           <div class="form-group">
             <label for="nome">Nome</label>
